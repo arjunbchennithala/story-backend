@@ -13,7 +13,7 @@ app.get("/", (req, res)=> {
 
 app.get("/story/:storyId", (req, res)=>{
     story_id = parseInt(req.params.storyId);
-    if(story_id > data.story_length || story_id < 0) {
+    if(story_id >= data.story_length || story_id < 0) {
         res.status(404).send("Not Found");
         return;
     }
